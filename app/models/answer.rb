@@ -1,8 +1,7 @@
 class Answer < ActiveRecord::Base
   attr_accessible :content, :question_id
   belongs_to :question
+  validates :content, presence: true
+  validates :question_id, presence: true
 end
 
-class Question < ActiveRecord::Base
-
-end
