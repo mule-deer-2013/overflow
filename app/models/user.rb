@@ -24,9 +24,3 @@ class User < ActiveRecord::Base
 end
 
 class ArgumentError < StandardError; end
-
-
-
-# has_many :responses, as: :responseable
-  # has_many :questions
-  # has_many :votes, :source => :votes, as: :voteable

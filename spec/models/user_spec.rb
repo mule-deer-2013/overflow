@@ -19,22 +19,12 @@ describe User do
 
     end
 
-    # it "save bcrypt password in the DB" do
-    #   expect(user.password_digest).to_not eq(User.find_by_username("test").password_digest)
-    # end
   end
 
   describe "#ask_question" do
-    it "create question in DB with title and content that associate with the user" do
-      pending
-      # expect {user.ask_question("this is title", "this is content") }.to change{ user.questions}.by(1)
-    end
-
+    it "create question in DB with title and content that associate with the user"
     it "errs when title or content is nil" do
       expect { user.ask_question }.to raise_error(ArgumentError)
     end
-
-
   end
-
 end
