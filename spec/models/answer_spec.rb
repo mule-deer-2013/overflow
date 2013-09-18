@@ -7,10 +7,11 @@ describe Answer do
   		answer.should_not be_nil
   	end
 
-  	context "answering a question" do
-  		it "belongs to a question" do
-  			expect { answer.question }.should_not raise_error
-  		end
+  	describe Answer do
+  
+  			# expect { answer.question }.should_not raise_error
+  			it { should belong_to(:question) }
+  		
   	end
   end 
 

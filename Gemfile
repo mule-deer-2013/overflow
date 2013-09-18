@@ -27,10 +27,9 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :test do
-  gem "shoulda-matchers"
+  gem 'shoulda-matchers'
 end
-
-group :development, :test do
+group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl'
 end
