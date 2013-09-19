@@ -4,6 +4,10 @@
 
 <p>Question: <%= @question.content %></p>
 
+<%= link_to 'Respond to this question?', new_question_response_path(@question) %>
+
+<%= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
+
 <%= link_to 'Homepage', questions_path %>
 
 
