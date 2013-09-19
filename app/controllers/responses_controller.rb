@@ -1,9 +1,5 @@
 class ResponsesController < ApplicationController
 
-def index
-  @responses = Response.all
-end
-
 def new
 @response = Response.new
 end
@@ -17,11 +13,5 @@ def create
      render responses_new.html.erb
   end
 end
-
-def destroy 
-end
-
-
-
 
 end
