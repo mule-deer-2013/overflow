@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 # User.create(name: 'Doktor', password_digest: '123')
 # User.first << Question.new(title: 'Cool question', content: 'What is your name?')
 
 Question.create(title: 'Cool question', content: 'What is your name?')
+
+Response.create(user_id: 1, question_id: 23, body: "camp cucamonga")
+
