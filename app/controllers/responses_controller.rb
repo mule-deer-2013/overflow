@@ -8,8 +8,6 @@ def new
 @response = Response.new
 end
 
-
-
 def create
   @response = Response.create(params[:response])
   if @response
@@ -18,11 +16,9 @@ def create
      @alert = @response.errors.full_messages
      render responses_new.html.erb
   end
-
 end
 
 def destroy 
-
 end
 
 
