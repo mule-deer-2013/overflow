@@ -1,4 +1,9 @@
 DbcOverflow::Application.routes.draw do
+
+  resources :questions do
+    resources :answers, only: [:new, :create]
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
