@@ -17,6 +17,19 @@ ActiveRecord::Schema.define(:version => 20130918220557) do
     t.integer "user_id"
     t.integer "question_id"
     t.string  "body"
+
+ActiveRecord::Schema.define(:version => 20130918215610) do
+
+  create_table "answers", :force => true do |t|
+    t.text     "content"
+    t.integer  "question_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
