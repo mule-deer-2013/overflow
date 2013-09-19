@@ -15,6 +15,7 @@ class QuestionsController < ActionController::Base
 
   def show
   	@question = Question.find(params[:id])
+    @responses = @question.responses
   end
 
   def edit

@@ -5,12 +5,13 @@ def new
 end
 
 def create
-  @response = Response.create(params[:response])
-  if @response
-    render response_index.html.erb
+  @response = Response.new(body: params[:response][:body], question_id: params[:question_id])
+  question = Question.find(params[:question_id])
+  if @response.save
+    redirect_to question_path(question)
   else
-     @alert = @response.errors.full_messages
-     render responses_new.html.erb
+     flash[:error] = @response.errors.full_messages
+     redirect_to question_path(question)
   end
 end
 

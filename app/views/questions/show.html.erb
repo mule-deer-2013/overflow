@@ -3,11 +3,25 @@
 <p>Title: <%= @question.title %></p>
 
 <p>Question: <%= @question.content %></p>
+<br>
 
-<%= link_to 'Respond to this question?', new_question_response_path(@question) %>
+<h3> Responses: </h3>
+
+<% if @responses.length > 0 %>
+    <% @responses.each do |response| %>
+      <%=  response.body  %>
+      <br>
+    <% end %>
+  <% else %>
+    <p>No responses</p>
+<% end %>
+
 
 <%= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
+<br>
+<%= render partial: 'responses/error' %>
 
+<br>
 <%= link_to 'Homepage', questions_path %>
 
 
