@@ -3,7 +3,6 @@ class Question < ActiveRecord::Base
 
   validates :content, :title, presence: true
 
-
 end
 
 # old model stuff
