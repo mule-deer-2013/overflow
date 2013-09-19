@@ -33,6 +33,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
+  gem 'capybara'
 end
 
 # To use Jbuilder templates for JSON
