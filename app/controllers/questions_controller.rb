@@ -4,16 +4,17 @@ def index
 	@questions = Question.all
 end
 
-def show
-	@question = Question.find(params[:id])
+def new
+  @question = Question.new
 end
 
 def create
-	@question = Question.create(params[:question])
+  @question = Question.create(params[:question])
+  redirect_to @question
 end
 
-def new
-	@question = Question.new
+def show
+	@question = Question.find(params[:id])
 end
 
 def update
