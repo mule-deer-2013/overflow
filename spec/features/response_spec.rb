@@ -7,6 +7,8 @@ describe 'Response features' do
       page.should have_content(response.body)
     end
 
+    
+
 
   end
 end
