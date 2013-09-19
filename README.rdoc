@@ -1,3 +1,53 @@
+SNACK OVERFLOW README
+
+
+Already built:
+
+- models for users, questions, answers, responses
+- form for creating questions
+- some views
+- model testing
+
+What needs to be added:
+
+- more exhaustive testing
+- Node.JS framework
+- accept credit card payments
+- ability to vote
+- finish controller for user so it can interact with questions, answers, responses...
+- nested routes
+- models dont talk to each other yet
+- ability for users to answer questions
+- improved views
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
