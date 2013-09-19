@@ -8,6 +8,7 @@ resources :questions
     resources :answers, only: [:new, :create]
   end
 
+root to: 'questions#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
