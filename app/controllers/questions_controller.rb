@@ -19,13 +19,21 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 
-
   def update
+    @question = Question.find(params[:id])
+    # @question.title = params[:question][:title]
+    # @question.content = params[:question][:content]
+    # @question.save
+    @question.update_attributes(params[:question])
+    redirect_to @question
   end
 
   def destroy
+    @question = Question.find(params[:id]).destroy
+    redirect_to root_path
   end
 
 end
