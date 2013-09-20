@@ -14,7 +14,7 @@ describe Question do
 		end
 	end
 
-	describe "#association" do
+	describe ".association" do
 		it { should have_many(:responses) }
 		it { should belong_to(:user)}
 		it { should have_many(:responses)}

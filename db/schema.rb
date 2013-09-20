@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(:version => 20130920185710) do
     t.string   "content"
     t.integer  "responsable_id"
     t.string   "responsable_type"
-    t.integer  "question_id"
-    t.integer  "answer_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
