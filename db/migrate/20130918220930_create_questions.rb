@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
   	create_table :questions do |t|
   		t.string :title
   		t.string :content
-  		t.integer :user_id
+  		t.belongs_to :user
   	end
   end
 end

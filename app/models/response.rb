@@ -1,5 +1,5 @@
 class Response < ActiveRecord::Base
-  belongs_to :question
+  belongs_to :user
   has_many :responses, as: :responsable
   belongs_to :responsable, polymorphic: true
   has_many :votes, as: :votable

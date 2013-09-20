@@ -4,6 +4,7 @@ class CreateResponses < ActiveRecord::Migration
       t.string :content
       t.integer :responsable_id
       t.string :responsable_type
+      t.belongs_to :user
 
       t.timestamps
     end
