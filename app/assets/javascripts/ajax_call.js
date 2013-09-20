@@ -12,16 +12,6 @@ $(document).ready(function() {
     e.preventDefault();
     $('#responses').append(data)
     $('textarea').val("")
-    console.log(data);
   });
 
-
 });
-
-
-
-
-  // $('form').submit( function(e) {
-  //   e.preventDefault();
-  //   $()
-  // });
