@@ -1,10 +1,12 @@
 DbcOverflow::Application.routes.draw do
 
+resources :users, only: [:index, :new, :create, :show]
+
 resources :questions do
   resources :responses, only: [:new, :create]
 end
 
-root to: 'questions#index'
+root to: 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
