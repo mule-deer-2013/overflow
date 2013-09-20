@@ -1,10 +1,12 @@
 class Question < ActiveRecord::Base
-	
-  attr_accessible :user_id, :content, :title
+  belongs_to :user
+  has_many :votes, as: :votable
+  has_many :responses, as: :responsable
 
+  attr_accessible :user_id, :content, :title
+   
   validates :content, :title, presence: true
 
-  has_many :responses 
 
-end
+end 
 

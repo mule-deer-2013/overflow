@@ -1,12 +1,9 @@
 class CreateQuestions < ActiveRecord::Migration
-  def up
+  def change
   	create_table :questions do |t|
   		t.string :title
   		t.string :content
-  		t.belongs_to :user
+  		t.integer :user_id
   	end
-  end
-
-  def down
   end
 end

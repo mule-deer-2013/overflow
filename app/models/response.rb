@@ -1,6 +1,9 @@
 class Response < ActiveRecord::Base
-   attr_accessible :body, :user_id, :question_id
-   validates :body, presence: true, allow_blank: false
+  belongs_to :question
+  has_many :responses, as: :responsable
+  belongs_to :responsable, polymorphic: true
 
+  has_many :votes, as: :votable
 
+  attr_accessible :content, :responsable_id, :responsable_type, :question_id, :answer_id
 end

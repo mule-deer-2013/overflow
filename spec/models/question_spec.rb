@@ -1,21 +1,24 @@
 require 'spec_helper'
 
 describe Question do
-	let(:question_valid) {Question.new(user_id: 1, title: 'Cool question', content: 'What is your name?')}
-	let(:question_with_nil) {Question.new(user_id: 1, content: nil)}
-	it 'can be created' do
-		question_valid.should be_valid	
-	end
-	it 'is invalid without content' do
-		question_with_nil.should_not be_valid
+	let(:question) {Question.new(title: 'Cool question', content: 'What is your name?')}
+
+	describe "#initialize" do
+		it 'can initialize with valid inputs' do
+			expect{question.save}.to change{Question.count}.by(1)
+		end
+
+		it "cannot initialize when content or title is black" do
+			expect{Question.new(content: "foo")}.to_not change{Question.count}
+			expect{Question.new(title: "foo")}.to_not change{Question.count} 
+		end
 	end
 
-	it 'returns the questions content' do
-		question_valid.content.should == 'What is your name?'
+	describe "#association" do
+		it { should have_many(:responses) }
+		it { should belong_to(:user)}
+		it { should have_many(:responses)}
 	end
 
-	it 'returns the questions content' do
-		question_valid.title.should == 'Cool question'
-	end
 
 end
