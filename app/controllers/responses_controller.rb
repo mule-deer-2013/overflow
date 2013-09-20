@@ -1,27 +1,19 @@
 class ResponsesController < ApplicationController
 
-def index
-  @responses = Response.all
-end
-
 def new
 @response = Response.new
 end
 
 def create
-  @response = Response.create(params[:response])
-  if @response
-    render response_index.html.erb
+  @response = Response.new(body: params[:response][:body], question_id: params[:question_id])
+  question = Question.find(params[:question_id])
+  if @response.save
+    render :json => render_to_string(:partial => 'responses/responses', :locals => {:response => @response }).to_json
+
   else
-     @alert = @response.errors.full_messages
-     render responses_new.html.erb
+     flash[:error] = @response.errors.full_messages
+     redirect_to question_path(question)
   end
 end
-
-def destroy 
-end
-
-
-
 
 end
