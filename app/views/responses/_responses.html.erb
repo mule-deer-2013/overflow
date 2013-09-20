@@ -1,1 +1,5 @@
+<% if @response.body %>
 <%= @response.body %><br>
+<% else %>
+<%= @response_errors %>
+<% end %>

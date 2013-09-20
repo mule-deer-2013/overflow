@@ -11,8 +11,8 @@ def create
     render :json => render_to_string(:partial => 'responses/responses', :locals => {:response => @response }).to_json
 
   else
-     flash[:error] = @response.errors.full_messages
-     redirect_to question_path(question)
+    @errors = @response.errors.full_messages
+    render :json => render_to_string(:partial => 'responses/error', :locals => {:errors => @errors }).to_json, status: :unprocessable_entity 
   end
 end
 
