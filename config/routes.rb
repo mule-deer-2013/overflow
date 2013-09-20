@@ -1,6 +1,6 @@
 DbcOverflow::Application.routes.draw do
 
-resources :questions, only: [:index, :new, :create, :show] do
+resources :questions do
   resources :responses, only: [:new, :create]
 end
 
