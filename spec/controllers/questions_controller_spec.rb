@@ -77,11 +77,12 @@ describe QuestionsController do
   end
 
   describe "PUT update" do
-    let (:new_question_parameter) { { :title => "new", :content => "new" } }
     let (:original_question) { Question.create(:title => "test", :content => "test") }
+    let (:new_question_parameter) { { :title => "new", :content => "new" } }
+    let (:successful_params) { { :id => original_question.id, :question => new_question_parameter } }
 
     it "redirects to @question" do
-      put :update, :id => original_question.id
+      put :update, successful_params
       question = assigns(:question)
       question.should be_an_instance_of Question
       response.should redirect_to(question_path(question))
@@ -90,7 +91,7 @@ describe QuestionsController do
     it "updates the question" do
       puts new_question_parameter
       expect {
-        put :update, { :id => original_question.id, :question => new_question_parameter }
+        put :update, successful_params
       }.to change {
         original_question.reload.title
       }.from('test').to('new')
