@@ -23,9 +23,9 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    # @question.title = params[:question][:title]
-    # @question.content = params[:question][:content]
-    # @question.save
+    @question.title = params[:question][:title]
+    @question.content = params[:question][:content]
+    @question.save
     # @question.update_attributes(params[:question])
     redirect_to @question
   end
