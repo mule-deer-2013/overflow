@@ -1,19 +1,26 @@
 require 'spec_helper'
 
 describe Response do
-  let(:question) {Question.create(title: 'question', content: "question's content?")}
+  let(:question) { Question.create(title: 'question', content: "question's content?")}
   let(:answer) { question.responses.build(content: "answer",responsable_type: "Question")}
   let(:comment) { answer.responses.build(content: "comment", responsable_type: "Response")}
 
-  describe "#initialize_answer" do
-    it "can initialize with valid input" do
-      expect { 
-        answer.save
-      }.to change{ question.responses.count }.by(1) 
+  describe "#initialize" do
+    context "answer" do
+      it "can initialize with valid input" do
+        expect { answer.save }.to change{ question.responses.count }.by(1) 
+      end
+
+      it "cannot initialize if content is blank" do
+        expect { Response.create }.to_not change{Response.count}
+      end
     end
 
-    it "cannot initialize if content is blank" do
-      expect { Response.create }.to_not change{Response.count}
+    context "comment" do
+      it "can initialize with valid input" do
+        answer.save
+        expect { comment.save }.to change{ answer.responses.count }.by(1) 
+      end
     end
   end
 
