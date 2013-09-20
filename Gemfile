@@ -2,11 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
+gem 'debugger'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
 gem 'pg'
+
+gem 'jquery-rails'
+
 
 
 # Gems used only for assets and not required
@@ -31,6 +35,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'capybara'
   gem "shoulda-matchers"
+  gem "launchy"
 end
 
 # To use Jbuilder templates for JSON

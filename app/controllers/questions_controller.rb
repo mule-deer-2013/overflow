@@ -1,27 +1,39 @@
-class QuestionsController < ActionController::Base
+class QuestionsController < ApplicationController
 
-def index
-	@questions = Question.all
-end
+  def index
+  	@questions = Question.all
+  end
 
-def show
-	@question = Question.find(params[:id])
-end
+  def new
+    @question = Question.new
+  end
 
-def create
-	@question = Question.create(params[:question])
-end
+  def create
+    @question = Question.create(params[:question])
+    redirect_to @question
+  end
 
-def new
-	@question = Question.new
-end
+  def show
+  	@question = Question.find(params[:id])
+    @responses = @question.responses
+  end
 
-def update
+  def edit
+    @question = Question.find(params[:id])
+  end
 
-end
+  def update
+    @question = Question.find(params[:id])
+    # @question.title = params[:question][:title]
+    # @question.content = params[:question][:content]
+    # @question.save
+    @question.update_attributes(params[:question])
+    redirect_to @question
+  end
 
-def destroy
-
-end
+  def destroy
+    @question = Question.find(params[:id]).destroy
+    redirect_to root_path
+  end
 
 end
