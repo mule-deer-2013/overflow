@@ -1,10 +1,18 @@
 $(document).ready(function() {
-  console.log("In javascript document ready");
 
-  $('form').submit( function(e) {
+  $("form").on('ajax:success', function(e, data) {
     e.preventDefault();
-    console.log('testing');
-    $(this).toggle();
-  });
+    $('#responses').append(data)
+    $('textarea').val("")
+  })
+
 
 });
+
+
+
+
+  // $('form').submit( function(e) {
+  //   e.preventDefault();
+  //   $()
+  // });

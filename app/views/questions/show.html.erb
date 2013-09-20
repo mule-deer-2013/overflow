@@ -6,7 +6,7 @@
 <br>
 
 <h3> Responses: </h3>
-
+<div id="responses">
 <% if @responses.length > 0 %>
     <% @responses.each do |response| %>
       <%=  response.body  %>
@@ -15,7 +15,7 @@
   <% else %>
     <p>No responses</p>
 <% end %>
-
+</div>
 
 <%= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
 <br>
