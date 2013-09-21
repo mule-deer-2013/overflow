@@ -1,32 +1,41 @@
-
+                                               
 require 'spec_helper'
 
 describe User do
-  let(:bpassword) { BCrypt::Password.create("my password") }
-  let(:user) { User.create(username: "test", password_digest: bpassword) }
-  describe "#initialize" do
+  # before(:each) do 
+  #   @attr = {
+  #     username: 'Example User',
+  #     email: 'user@example.com',
+  #     password: 'foobar'
+  #   }
+  # end
 
-    it "does not save to DB when username is not unique" do
-      expect { User.create(username: "test") }.to_not change{User.count}
-    end
+  # it "should create a new instance given valide attributes" do
+  #   User.create!(@attr)
+  # end
 
-    it "is able to persist in the database when saved" do
-      expect { user }.to change { User.count }.by(1)
-    end
+  # describe "password validations" do 
 
-    it "raises error when either username or password is missing" do
-      expect { User.create(username: "foo") }.to_not change{User.count}
-      expect { User.create }.to_not change{User.count}
+  #   it "should require a password" do
+  #     User.new(@attr.password)
+  #     should_not be_valid
+  #   end
 
-    end
+  # end
 
-  end
+  # describe "password encryption" do
 
-  describe "#ask_question" do
-    it "create question in DB with title and content that associate with the user"
-    it "errs when title or content is nil" do
-      expect { user.ask_question }.to raise_error(ArgumentError)
-    end
-  end
+  #   before(:each) do 
+  #     @user = User.create!(@attr)
+  #   end
+  #   it "should have an encrypted password attribute" do
+  #     @user.should respond_to(:encrypted_password)
+  #   end
+
+  #   it "should set the encrypted password" do 
+  #     @user.encrypted_password.should_not be_blank
+  #   end
+
+end
 end
 
