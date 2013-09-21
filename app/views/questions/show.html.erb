@@ -1,22 +1,28 @@
-<h1>This is the show page</h1>
+<h1>Title: <%= @question.title %></h1>
 
-<p>Title: <%= @question.title %></p>
+<h3>Content: <%= @question.content %></h3>
+<hr>
 
-<p>Question: <%= @question.content %></p>
-<br>
+<h3> Answer: </h3>
+<%= link_to "New Answer", '#', :class => 'new-answer' %>
 
-<h3> Responses: </h3>
 <div id="responses">
-<% if @responses.length > 0 %>
-    <% @responses.each do |response| %>
-      <%=  response.body  %>
-      <br>
-    <% end %>
-  <% else %>
-    <p>No responses</p>
-<% end %>
+  <% @answers.each do |answer| %>
+    <%=  answer.content  %>
+    <%= link_to "New Comment", '#', :class => 'new-comment' %>
+    <% answer.responses.each do |comment| %>
+      <%=  comment.content %>
+    <% end %>        
+  <% end %>
+
+
 </div>
 
-<%= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
-<br>
+<div class="add-answer-form hidden">
+  <%= render partial: '/responses/new', locals: { responsable: Question, response: @question.responses.build } %>
+</div>
+
+
+
+
 <%= link_to 'Homepage', questions_path %>

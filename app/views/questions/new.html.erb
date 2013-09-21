@@ -1,5 +1,17 @@
-<h1>New page to create a post</h1>
+<h1>Create question here</h1>
 
-<%= render 'form' %>
+<%= form_for @question do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <p> <%= link_to 'Questions Home', questions_path %></p>

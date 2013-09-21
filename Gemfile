@@ -38,6 +38,10 @@ group :development, :test do
   gem "launchy"
 end
 
+group :development do
+  gem "better_errors"
+end
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

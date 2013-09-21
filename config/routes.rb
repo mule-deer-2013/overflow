@@ -1,5 +1,6 @@
 DbcOverflow::Application.routes.draw do
 
+
   resources :questions do
     resources :responses, only: [:new, :create]
   end
@@ -10,6 +11,10 @@ DbcOverflow::Application.routes.draw do
 
 
 
+
+
+resources :questions do
+  resources :responses, except: [:index]
 
 
   # The priority is based upon order of creation:
