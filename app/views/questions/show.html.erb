@@ -9,7 +9,7 @@
 <div id="responses">
 <% if @responses.length > 0 %>
     <% @responses.each do |response| %>
-      <%=  response.body  %>
+      <%=  response.content  %>
       <br>
     <% end %>
   <% else %>
