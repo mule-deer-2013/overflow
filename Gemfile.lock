@@ -38,13 +38,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.3)
     columnize (0.3.6)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -142,7 +135,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
-  coffee-rails (~> 3.2.1)
   debugger
   factory_girl
   jquery-rails
