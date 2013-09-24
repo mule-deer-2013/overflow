@@ -17,6 +17,7 @@
 <% end %>
 </div>
 
-<%= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
+<%= button_to 'Answer Question', new_question_response_path(@question), form_class: 'show_response_form', method: :get, remote: true %>
+<%#= render partial: '/responses/new', locals: {question: @question, response: Response.new} %>
 <br>
 <%= link_to 'Homepage', questions_path %>

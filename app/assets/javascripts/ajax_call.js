@@ -8,10 +8,17 @@ $(document).ready(function() {
       $('div#error').remove();
     });
   });
-  $("form").on('ajax:success', function(e, data) {
+
+  $("form.show_response_form").on('ajax:success', function(e, data) {
+    $(this).after(data);
+    //$(this).remove();
+  });
+
+  $("body").on('ajax:success', 'form#new_response', function(e, data) {
     e.preventDefault();
     $('#responses').append(data)
     $('textarea').val("")
+    $('.response_form').remove();
   });
 
 });

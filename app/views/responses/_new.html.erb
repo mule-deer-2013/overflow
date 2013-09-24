@@ -1,5 +1,7 @@
+<div class="response_form">
 <h3>Your response:</h3>
 <%= form_for [question, response], remote: true do |f| %>
   <%= f.text_area :content %><br />
   <%= f.submit "What do you think?" %>
 <% end %>
+</div>

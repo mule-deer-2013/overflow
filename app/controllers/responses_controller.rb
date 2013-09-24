@@ -6,7 +6,8 @@ def index
 end
 
 def new
-  @response = Response.new
+  question = Question.find(params[:question_id])
+  render :status => 200, :json => render_to_string(partial: '/responses/new', locals: { question: question, response: question.responses.new }).to_json
 end
 
 def create
