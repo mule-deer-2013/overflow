@@ -8,6 +8,7 @@ gem 'debugger'
 
 
 gem 'pg'
+gem 'thin'
 
 gem 'jquery-rails'
 
@@ -17,7 +18,6 @@ gem 'jquery-rails'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -32,7 +32,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'capybara'
   gem "shoulda-matchers"
   gem "launchy"

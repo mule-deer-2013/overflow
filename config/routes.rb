@@ -1,11 +1,12 @@
 DbcOverflow::Application.routes.draw do
 
   resources :questions do
-    resources :responses, only: [:new, :create]
+    resources :responses, only: [:new, :create, :index]
   end
 
   resources :users
-  match '/', :to => 'users#index'
+
+  root to: 'questions#index'
 
 
 

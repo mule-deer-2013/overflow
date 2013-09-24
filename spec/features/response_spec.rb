@@ -1,14 +1,14 @@
+require 'spec_helper'
+
 describe 'Response features' do
   context "Omnipotent behaviour" do
-    let!(:response) {Response.create(user_id: 1, question_id: 23, body: "camp cucamonga")}
+    let(:question) { Question.create(title: 'how are you?', content: 'i dunno') }
+    let!(:response) { question.responses.create(content: "camp cuamonga") }
 
     it "will load responses index " do
-      visit responses_path
-      page.should have_content(response.body)
+      visit question_responses_path(question)
+      page.should have_content(response.content)
     end
-
-    
-
 
   end
 end

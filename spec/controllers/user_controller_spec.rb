@@ -6,12 +6,12 @@ describe UsersController do
 	describe "Get 'show'" do
 
 		before(:each) do 
-			@user = Factory(:user)
+			@user = FactoryGirl.create(:user)
 		end
 
 		it "should be successful" do 
 			get "new"
-			response.should be_sucess
+			response.should be_success
 		end
 	end
 end
