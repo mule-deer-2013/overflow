@@ -5,7 +5,8 @@ DbcOverflow::Application.routes.draw do
   end
 
   resources :users
-  match '/', :to => 'users#index'
+
+  root to: 'questions#index'
 
 
 
