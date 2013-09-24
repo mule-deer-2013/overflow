@@ -1,7 +1,12 @@
 class ResponsesController < ApplicationController
 
+def index
+  @question = Question.find(params[:question_id])
+  @responses = @question.responses
+end
+
 def new
-@response = Response.new
+  @response = Response.new
 end
 
 def create
