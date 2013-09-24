@@ -8,6 +8,7 @@ gem 'debugger'
 
 
 gem 'pg'
+gem 'thin'
 
 gem 'jquery-rails'
 
